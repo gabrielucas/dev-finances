@@ -1,0 +1,302 @@
+:root{
+    --bcg-grey: #f0f2f5;
+    --bcg-green: #2d4a22;
+    --bcg-clear: #fff;
+    --clear-text: #fff;
+    --dark-text: #000;
+    --purple-text: #363f5f;
+    --bcg-total: #49aa26;
+    --light-green: #3dd705
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 93.75%;
+}
+
+body{
+    background: var(--bcg-grey);
+    font-family: 'Poppins', sans-serif;
+}
+
+.sr-only{
+    /* border: solid 1px red; */
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container{
+    margin: auto;
+    width: min(90vw, 800px); /* procura o menor dos valores passados como parâmetro */
+}
+
+/* Titles ======================== */
+h2{
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--purple-text);
+    font-weight: normal;
+}
+
+/* Links & Buttons ======================== */
+
+a{
+    color: var(--bcg-total);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--light-green);
+}
+
+.button.new{
+    /* alterando o display padrão para pegar a margem */
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+button{
+    background: var(--bcg-total);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--bcg-clear);
+    cursor: pointer;
+
+    height: 50px;
+    width: 100%;
+    padding: 0;
+}
+
+button:hover{
+    background: var(--light-green);
+}
+
+.button.cancel{
+    color: #e92929;
+    border: 2px #e92929 solid;
+    border-radius: 0.25rem;
+
+    height: 50px;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+}
+
+.button.cancel:hover{
+    opacity: 1;
+}
+
+/* Header ======================== */
+header{
+    background: var(--bcg-green);
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+
+#logo{
+    color: var(--clear-text);
+    font-weight: 100;
+}
+
+/* Balance ======================== */
+#balance{
+    margin-top: -8rem;
+}
+
+#balance h2{
+    color: var(--clear-text);
+    margin-top: 0;
+}
+
+/* Cards ======================== */
+.card{
+    background: var(--bcg-clear);
+    color: var(--purple-text);
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.card h3{
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    font-weight: normal;
+    justify-content: space-between;
+}
+
+.card p{
+    font-size: 2rem;
+    /* line-height: 3rem; */
+    margin-top: 1rem;
+}
+
+.card.total{
+    background: var(--bcg-total);
+    color: var(--clear-text);
+}
+
+/* Table ======================== */
+#transaction{
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+#data-table{
+    color: #969cb3;
+    border-spacing: 0 0.5rem;
+    width: 100%;
+}
+
+table thead th:first-child,
+table tbody td:first-child{
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead th:last-child,
+table tbody td:last-child{
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+table th{
+    background: var(--bcg-clear);
+    color: #969cb3;
+    font-weight: normal;
+    padding:  1rem 2rem;
+    text-align: left;
+}
+
+table tbody tr{
+    opacity: .7;
+}
+
+table tbody tr:hover{
+    opacity: 1;
+}
+
+table tbody td{
+    background: var(--bcg-clear);
+    padding: 1rem 2rem;
+}
+ 
+table tbody tr td:last-child{
+    cursor: pointer;
+}
+
+td.description{
+    color: var(--purple-text)
+}
+
+td.income{
+    color: #12a454;
+}
+
+td.expense{
+    color: #e92929;
+}
+
+/* Modal ======================== */
+.modal-overlay{
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal{
+    background: #f0f2f5;
+    padding: 2.4rem;
+
+}
+
+/* Form ======================== */
+
+#form{
+    max-width: 500px;
+}
+
+#form h2{
+    margin-top: 0;
+}
+
+input{
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: .8rem;
+    width: 100%;
+}
+
+.input-group{
+    margin-top: .8rem;
+}
+
+.input-group small{
+    opacity: 0.4;
+}
+
+.input-group.actions{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group.actions .button,
+.input-group.actions button{
+    width: 48%;
+}
+
+/* Footer ======================== */
+footer{
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: var(--purple-text);
+    opacity: 0.6;
+
+    position: relative;
+    z-index: -1;
+}
+
+/* Responsive ======================== */
+@media (min-width: 800px) {
+    html{
+        font-size: 87.5%; /* 14px */
+    }
+
+    #balance{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
